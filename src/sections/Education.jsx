@@ -1,4 +1,5 @@
 import { EDUCATION } from "../constants";
+import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
 const Education = () => {
   return (
@@ -8,38 +9,58 @@ const Education = () => {
           PENDIDIKAN
         </h2>
 
-        <div className="space-y-12 sm:space-y-16 md:space-y-24 relative">
-          {/* Garis Vertikal Tengah - Hanya untuk Desktop */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-white -translate-x-1/2 opacity-30"></div>
+        {/* Grid Layout - 2 Columns di Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+          {EDUCATION.map((item, index) => (
+            <div 
+              key={index} 
+              className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2"
+            >
+              {/* Gambar dengan Overlay */}
+              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.institution}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                
+                {/* Badge Tahun */}
+                <div className="absolute top-4 right-4 bg-[#AC1754] text-white px-4 py-2 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg">
+                  <Calendar size={16} />
+                  {item.year}
+                </div>
+              </div>
 
-          {EDUCATION.map((item, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <div key={index} className={`flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Deskripsi */}
-                <div className="flex-1 w-full">
-                  <div className={`p-6 sm:p-8 bg-white rounded-2xl sm:rounded-3xl shadow-xl border-b-4 sm:border-b-6 md:border-b-8 border-[#AC1754] ${isEven ? 'md:text-right' : 'md:text-left'} text-center md:text-left`}>
-                    <span className="text-[#E53888] font-bold text-sm sm:text-base">{item.year}</span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#AC1754] mt-1 sm:mt-2">{item.major}</h3>
-                    <p className="text-gray-500 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{item.institution}</p>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.description}</p>
+              {/* Content */}
+              <div className="p-6 sm:p-8">
+                {/* Icon Header */}
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="bg-[#F7A8C4] p-3 rounded-2xl">
+                    <GraduationCap size={24} className="text-[#AC1754]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#AC1754] leading-tight">
+                      {item.major}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-1 text-gray-500">
+                      <MapPin size={16} />
+                      <p className="font-semibold text-sm">{item.institution}</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Titik Tengah - Hanya untuk Desktop */}
-                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-5 h-5 md:w-6 md:h-6 bg-white rounded-full border-4 border-[#AC1754] z-10 shadow-lg"></div>
+                {/* Description */}
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  {item.description}
+                </p>
 
-                {/* Foto */}
-                <div className="flex-1 w-full">
-                  <img 
-                    src={item.image} 
-                    alt={item.institution} 
-                    className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-48 sm:h-56 md:h-64 object-cover border-4 border-white" 
-                  />
-                </div>
+                {/* Decorative Bottom Border */}
+                <div className="mt-6 h-1 w-16 bg-gradient-to-r from-[#AC1754] to-[#E53888] rounded-full"></div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

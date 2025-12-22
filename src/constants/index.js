@@ -16,7 +16,7 @@ export const EDUCATION = [
     major: "Jurusan MIPA",
     institution: "SMAN 1 Panti",
     description: "Lulusan Jurusan MIPA serta peraih nilai tertinggi pada mata pelajaran Kimia dan Fisika.",
-    image: "https://cdn-web.ruangguru.com/file-uploader/09f4d595-174f-432a-b891-850e872a1373.jpeg"
+    image: "sma.jpeg"
   }
 ];
 
@@ -33,7 +33,14 @@ export const ORGANIZATIONS = [
     role: "Staff Badan Manajerial",
     organization: "KM ITK",
     description: "Bertanggung jawab mencari dan menyediakan pemateri dalam kegiatan PMO dan PDO setiap himpunan di ITK",
-    image: "/kadep-hmif.jpeg"
+    image: "/bmj.jpeg"
+  },
+  {
+    year: "2024 - Sekarang",
+    role: "Pemandu LKMM ITK",
+    organization: "PEMANDU LKMM ITK",
+    description: "Merancang konsep pelatihan di ITK dan menjadi pemateri pada kegiatan LKMM Pra-TD dan LKMM TD sebagai upaya pengembangan kepemimpinan dan manajerial mahasiswa.",
+    image: "/pemandu.jpeg"
   },
   {
     year: "2024 - 2025",
@@ -47,7 +54,7 @@ export const ORGANIZATIONS = [
     role: "Staff Magang Departemen Dalam Negeri HMIF",
     organization: "HMIF ITK",
     description: "Menjadi MC pada acara syukuran wisuda HMIF.",
-    image: "/staff_hmif.JPG"
+    image: "/staff_magang.jpeg"
   }
 ];
 
@@ -60,27 +67,48 @@ export const COMMITTEES = [
     image: "expo_infinite.jpg"
   },
   {
+    year: "2024",
+    role: "Staf Divisi Acara",
+    event: "Retreat PMK ITK 2024",
+    description: "Bertanggung jawab atas perancangan konsep dan tema acara bagi mahasiswa baru se-Institut Teknologi Kalimantan, termasuk desain permainan indoor dan outdoor serta pengelolaan pembagian kelompok peserta secara terstruktur.",
+    image: "retreat.jpeg"
+  },
+  {
+    year: "2024",
+    role: "Staf Divisi Dana Usaha",
+    event: "HUT KM ITK 2024",
+    description: "Bertanggung jawab atas penyusunan laporan penjualan serta pengembangan strategi penjualan untuk mencapai target yang telah ditetapkan.",
+    image: "hut_km.jpeg"
+  },
+  {
+    year: "2024",
+    role: "Staf Divisi Acara",
+    event: "SPIn ETAM ITK 2024",
+    description: "Menjadi LO dalam kegiatan SPIn ETAM sebagai penghubung komunikasi dengan peserta, memastikan penyampaian informasi yang akurat, serta berkontribusi dalam perancangan gerakan flashmob dan penyusunan kode papermob untuk rangkaian acara penyambutan mahasiswa baru Institut Teknologi Kalimantan.",
+    image: "Spin_etam.jpeg"
+  },
+  {
     year: "2023",
-    role: "Koordinator Dokumentasi",
-    event: "PKKMB ITK 2023",
-    description: "Memimpin tim dokumentasi dalam rangkaian acara pengenalan kampus mahasiswa baru.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600"
-  }
+    role: "Staf Divisi Acara",
+    event: "INFINITE Vol.3",
+    description: "Menyusun Term of Reference (TOR) InfoTech EXPO INFINITE Vol. 3 serta berperan dalam pemasangan dekorasi dan memastikan seluruh elemen acara tertata dengan rapi",
+    image: "expo.jpeg"
+  },
 ];
 
 export const PROJECTS = [
-  {
-    title: "Sistem Manajemen Inventaris",
-    tech: ["React", "Firebase", "Tailwind"],
-    description: "Aplikasi web untuk mencatat stok barang laboratorium kampus secara real-time dengan fitur notifikasi otomatis.",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=800", 
-    link: "https://github.com/usernamemu/project-a"
-  },
-  {
-    title: "Aplikasi Monitoring Sampah",
-    tech: ["React Native", "Node.js"],
-    description: "Proyek kolaborasi tim untuk memantau titik penumpukan sampah di area kampus menggunakan peta interaktif.",
-    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800",
-    link: "https://github.com/usernamemu/project-b"
-  }
+  // {
+  //   title: "Sistem Manajemen Inventaris",
+  //   tech: ["React", "Firebase", "Tailwind"],
+  //   description: "Aplikasi web untuk mencatat stok barang laboratorium kampus secara real-time dengan fitur notifikasi otomatis.",
+  //   image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=800", 
+  //   link: "https://github.com/usernamemu/project-a"
+  // },
+  // {
+  //   title: "Aplikasi Monitoring Sampah",
+  //   tech: ["React Native", "Node.js"],
+  //   description: "Proyek kolaborasi tim untuk memantau titik penumpukan sampah di area kampus menggunakan peta interaktif.",
+  //   image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800",
+  //   link: "https://github.com/usernamemu/project-b"
+  // }
 ];

@@ -71,7 +71,7 @@ const Footer = () => {
         {/* Garis Pembatas & Copyright */}
         <div className="w-full border-t border-white/20 pt-8 md:pt-10 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-center text-xs sm:text-sm text-white font-medium">
           <p className="opacity-90">© {currentYear} Naomi Ratna Marisaha Guen. All Rights Reserved.</p>
-          <p className="opacity-90">Dibuat dengan ❤️</p>
+          <p className="opacity-90">Dibuat dengan 🩶</p>
         </div>
         
       </div>
