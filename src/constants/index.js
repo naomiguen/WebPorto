@@ -16,7 +16,7 @@ export const EDUCATION = [
     major: "Jurusan MIPA",
     institution: "SMAN 1 Panti",
     description: "Lulusan Jurusan MIPA serta peraih nilai tertinggi pada mata pelajaran Kimia dan Fisika.",
-    image: "sma.jpeg"
+    image: "/sma.jpeg"
   }
 ];
 
@@ -62,53 +62,63 @@ export const COMMITTEES = [
   {
     year: "2025",
     role: "Staff Ahli Divisi Acara",
+    event: "Decathlon PMK ITK",
+    description: "Bertanggung jawab dalam merancang konsep kreatif dan menyusun rundown kegiatan secara detail, serta mengoordinasikan seluruh elemen acara untuk memastikan pelaksanaan berjalan tepat waktu dan sesuai dengan rencana yang telah ditetapkan",
+    image: "/Decathlon.JPG"
+  },
+  {
+    year: "2025",
+    role: "Staff Ahli Divisi Acara",
     event: "Infinite Vol.4",
     description: "Merancang konsep Expo Kerja Praktik Informatika dan pameran karya mata kuliah IoT, Game, serta Deep Learning sebagai media publikasi karya mahasiswa dan sarana promosi Program Studi Informatika.",
-    image: "expo_infinite.jpg"
+    image: "/expo_infinite.jpg"
   },
   {
     year: "2024",
     role: "Staf Divisi Acara",
     event: "Retreat PMK ITK 2024",
     description: "Bertanggung jawab atas perancangan konsep dan tema acara bagi mahasiswa baru se-Institut Teknologi Kalimantan, termasuk desain permainan indoor dan outdoor serta pengelolaan pembagian kelompok peserta secara terstruktur.",
-    image: "retreat.jpeg"
+    image: "/retreat.jpeg"
   },
   {
     year: "2024",
     role: "Staf Divisi Dana Usaha",
     event: "HUT KM ITK 2024",
     description: "Bertanggung jawab atas penyusunan laporan penjualan serta pengembangan strategi penjualan untuk mencapai target yang telah ditetapkan.",
-    image: "hut_km.jpeg"
+    image: "/hut_km.jpeg"
   },
   {
     year: "2024",
     role: "Staf Divisi Acara",
     event: "SPIn ETAM ITK 2024",
     description: "Menjadi LO dalam kegiatan SPIn ETAM sebagai penghubung komunikasi dengan peserta, memastikan penyampaian informasi yang akurat, serta berkontribusi dalam perancangan gerakan flashmob dan penyusunan kode papermob untuk rangkaian acara penyambutan mahasiswa baru Institut Teknologi Kalimantan.",
-    image: "Spin_etam.jpeg"
+    image: "/Spin_etam.jpeg"
   },
   {
     year: "2023",
     role: "Staf Divisi Acara",
     event: "INFINITE Vol.3",
     description: "Menyusun Term of Reference (TOR) InfoTech EXPO INFINITE Vol. 3 serta berperan dalam pemasangan dekorasi dan memastikan seluruh elemen acara tertata dengan rapi",
-    image: "expo.jpeg"
+    image: "/expo.jpeg"
   },
 ];
 
 export const PROJECTS = [
-  // {
-  //   title: "Sistem Manajemen Inventaris",
-  //   tech: ["React", "Firebase", "Tailwind"],
-  //   description: "Aplikasi web untuk mencatat stok barang laboratorium kampus secara real-time dengan fitur notifikasi otomatis.",
-  //   image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=800", 
-  //   link: "https://github.com/usernamemu/project-a"
-  // },
-  // {
-  //   title: "Aplikasi Monitoring Sampah",
-  //   tech: ["React Native", "Node.js"],
-  //   description: "Proyek kolaborasi tim untuk memantau titik penumpukan sampah di area kampus menggunakan peta interaktif.",
-  //   image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800",
-  //   link: "https://github.com/usernamemu/project-b"
-  // }
+  {
+    title: "Sistem Informasi Enterprise Architecture BMKG",
+    tech: ["React.js", "TOGAF Framework", "JavaScript", "Machine Learning"],
+    description: "Merancang Arsitektur Perusahaan menggunakan framework TOGAF untuk menyelaraskan proses bisnis dengan infrastruktur IT. Membangun aplikasi web responsif berbasis React.js sebagai implementasi dari cetak biru arsitektur, serta melakukan riset integrasi Machine Learning untuk pengolahan data cuaca/iklim yang lebih cerdas.",
+    image: "/dokum_bmkg.jpeg",
+    isPrivate: true
+  },
+  {
+    title: "ScanBar",
+    tech: ["Vue.js", "Express", "MongoDB", "Supabase"],
+    description: "ScanBar adalah aplikasi pelacak nutrisi berbasis web (PWA) yang dirancang khusus untuk produk makanan dan minuman. Aplikasi ini membantu pengguna memantau asupan kalori, gula, dan garam dengan cara memindai barcode kemasan atau menggunakan analisis AI untuk makanan tanpa kemasan.",
+    image: "/Scanbar.png",
+    demoLink: "https://scan-bar-y26r.vercel.app/",
+    githubLink: "https://github.com/naomiguen/fe-scanbar",
+    isPrivate: false
+  },
+  
 ];
