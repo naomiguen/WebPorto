@@ -1,7 +1,11 @@
 import { PROJECTS } from "../constants";
 import { ExternalLink, Code2, Lock, Github } from "lucide-react";
+import Reveal from "../components/Reveal";
+import Starfield from "../components/Starfield";
+import useLang from "../i18n/useLang";
 
 const Projects = () => {
+  const { lang, t, tr } = useLang();
   // Debug: Cek apakah data ter-import dengan benar
   console.log("PROJECTS data:", PROJECTS);
   console.log("PROJECTS length:", PROJECTS?.length);
@@ -13,9 +17,9 @@ const Projects = () => {
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-widest drop-shadow-lg">
-              Karya Pilihan
+              {t.section.projects}
             </h2>
-            <p className="text-white mt-8">Data proyek sedang dimuat...</p>
+            <p className="text-white mt-8">{t.project.loading}</p>
           </div>
         </div>
       </section>
@@ -31,26 +35,30 @@ const Projects = () => {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-[#AC1754] blur-[120px]"></div>
       </div>
 
+      <Starfield count={22} seed={51} />
+
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <Reveal className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-widest drop-shadow-lg">
-            Karya Pilihan
+            {t.section.projects}
           </h2>
           <div className="h-1 w-16 bg-gradient-to-r from-[#AC1754] to-[#E53888] rounded-full mx-auto mt-4"></div>
-        </div>
+        </Reveal>
 
         {/* Grid Layout - Responsive 1 Kolom (Mobile) & 2 Kolom (Desktop) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           {PROJECTS.map((project, index) => (
-            <div 
-              key={index} 
-              className="group relative bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex flex-col"
+            <Reveal key={index} delay={(index % 2) * 120} className="h-full">
+            <div
+              className="group relative h-full bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl overflow-hidden border border-white/20 hover:bg-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl flex flex-col"
             >
               {/* Image Container */}
               <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
                 <img 
                   src={project.image} 
-                  alt={project.title}
+                  alt={tr("projects", project.title, "title", project.title)}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => {
                     console.error("Image failed to load:", project.image);
@@ -63,12 +71,12 @@ const Projects = () => {
                 
                 {/* Floating Tech Stack */}
                 <div className="absolute top-5 left-5 right-5 flex flex-wrap gap-2">
-                  {project.tech.map((t, techIndex) => (
+                  {project.tech.map((tag, techIndex) => (
                     <span 
                       key={`${index}-${techIndex}`}
                       className="bg-white/90 backdrop-blur-sm text-[#AC1754] text-[10px] font-extrabold px-3 py-1.5 rounded-xl uppercase tracking-wider shadow-md"
                     >
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
@@ -86,11 +94,11 @@ const Projects = () => {
               {/* Content Section - BACKGROUND PUTIH */}
               <div className="p-6 sm:p-8 flex-grow flex flex-col bg-white">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#AC1754] mb-3 sm:mb-4 group-hover:text-[#E53888] transition-colors">
-                  {project.title}
+                  {tr("projects", project.title, "title", project.title)}
                 </h3>
                 
                 <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 flex-grow">
-                  {project.description}
+                  {tr("projects", project.title, "description", project.description)}
                 </p>
 
                 {/* Decorative Line */}
@@ -102,7 +110,7 @@ const Projects = () => {
                     // Private Project - Single Lock Button
                     <div className="inline-flex items-center gap-3 bg-[#F7A8C4] text-[#AC1754] px-6 sm:px-7 py-3 sm:py-3.5 rounded-2xl font-bold text-sm border border-[#E53888]/20 cursor-not-allowed">
                       <Lock size={16} />
-                      <span>Private Project (NDA)</span>
+                      <span>{t.project.private}</span>
                     </div>
                   ) : (
                     // Public Project - Dual Buttons (Demo + Repository)
@@ -116,22 +124,23 @@ const Projects = () => {
                           className="inline-flex items-center gap-2 bg-[#AC1754] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E53888] transition-all duration-300 shadow-lg group/btn active:scale-95 order-1"
                         >
                           <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                          <span>Coba Aplikasi</span>
+                          <span>{t.project.tryApp}</span>
                         </a>
                       )}
 
-                      {/* Repository Button - KANAN */}
-                      {project.githubLink && (
-                        <a 
-                          href={project.githubLink} 
+                      {/* Repository Button - KANAN (satu repo via githubLink, atau beberapa via githubLinks) */}
+                      {(project.githubLinks ?? (project.githubLink ? [{ label: t.project.repo, labelEn: t.project.repo, url: project.githubLink }] : [])).map((repo) => (
+                        <a
+                          key={repo.url}
+                          href={repo.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 bg-white text-[#AC1754] px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl font-bold text-sm border-2 border-[#AC1754] hover:bg-[#AC1754] hover:text-white transition-all duration-300 shadow-lg group/btn active:scale-95 order-2"
                         >
                           <Github size={16} className="group-hover/btn:rotate-12 transition-transform" />
-                          <span>Link Repository</span>
+                          <span>{lang === "en" ? repo.labelEn ?? repo.label : repo.label}</span>
                         </a>
-                      )}
+                      ))}
                     </div>
                   )}
                 </div>
@@ -140,6 +149,7 @@ const Projects = () => {
               {/* Decorative Corner - Glass Effect */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/20 to-transparent rounded-bl-[100px] pointer-events-none"></div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>
