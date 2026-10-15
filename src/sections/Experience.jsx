@@ -23,7 +23,7 @@ const Experience = () => {
   return (
     <div id="pengalaman">
       {/* SECTION MAGANG & ASISTEN */}
-      <section className="relative overflow-x-clip py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-[#E53888] via-[#F37199] to-[#F7A8C4]">
+      <section className="relative overflow-x-clip py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-[#D92F7A] via-[#EC5A92] to-[#F7A8C4]">
         <Starfield count={20} seed={91} />
         <FloatingHeart className="right-[7%] top-16 text-white/40" size={30} />
         <FloatingSparkle className="left-[6%] bottom-20 text-white/50" delay={-2} />
@@ -112,7 +112,7 @@ const Experience = () => {
         <FloatingHeart className="right-[6%] bottom-16 text-[#E53888]/30" delay={-3} size={30} />
 
         <div className="relative max-w-6xl mx-auto">
-          <Reveal as="h2" className="text-2xl sm:text-3xl md:text-4xl font-black text-[#AC1754] mb-12 sm:mb-16 md:mb-20 text-center uppercase tracking-widest">
+          <Reveal as="h2" className="text-2xl sm:text-3xl md:text-4xl font-black text-[#8E1244] mb-12 sm:mb-16 md:mb-20 text-center uppercase tracking-widest">
             {t.section.organizations}
           </Reveal>
 
@@ -208,7 +208,7 @@ const Experience = () => {
       </section>
 
       {/* SECTION KEPANITIAAN */}
-      <section className="relative overflow-x-clip py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#E53888] via-[#F37199] to-[#F7A8C4]">
+      <section className="relative overflow-x-clip py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#D92F7A] via-[#EC5A92] to-[#F7A8C4]">
         <Starfield count={36} seed={37} />
         <FloatingHeart className="left-[6%] top-14 text-white/40" size={30} />
         <FloatingSparkle className="right-[5%] bottom-20 text-white/50" delay={-2} />

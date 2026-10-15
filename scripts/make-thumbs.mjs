@@ -1,15 +1,17 @@
 // Membuat versi kecil (thumbnail) untuk semua foto yang dipakai di halaman galeri.
 //
 // Cara pakai:
-//   1. Taruh foto di folder public/
-//   2. Daftarkan di GALLERY_DATA (src/constants/index.js), mis. { src: "/foto-saya.jpeg" }
+//   1. Taruh foto di folder pengalamannya di dalam public/ (mis. public/organisasi/pmk-persekutuan/)
+//   2. Tulis nama file-nya di photosIn(...) pada GALLERY_DATA (src/constants/index.js)
 //   3. Jalankan:  npm run thumbs
 //
-// Thumbnail disimpan di public/thumbs/<nama-file>.jpg. Foto asli TIDAK diubah.
+// Thumbnail disimpan di public/thumbs/ dengan struktur folder yang sama dengan foto aslinya,
+// mis. public/organisasi/pmk-persekutuan/foto.jpeg -> public/thumbs/organisasi/pmk-persekutuan/foto.jpg
+// Foto asli TIDAK diubah.
 // Foto yang thumbnail-nya sudah ada dilewati; pakai `npm run thumbs -- --force` untuk membuat ulang semuanya.
 
 import { existsSync, mkdirSync, statSync } from "node:fs";
-import { basename, extname, join, resolve } from "node:path";
+import { basename, dirname, extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { GALLERY_DATA } from "../src/constants/index.js";
@@ -50,7 +52,9 @@ for (const src of sources) {
   }
 
   const name = basename(src, extname(src)) + ".jpg";
-  const output = join(outDir, name);
+  const rel = dirname(src).replace(/^\/+/, ""); // folder relatif terhadap public/
+  const output = join(outDir, rel, name);
+  mkdirSync(dirname(output), { recursive: true });
 
   if (!force && existsSync(output)) {
     skipped++;
@@ -65,7 +69,7 @@ for (const src of sources) {
     .toFile(output);
 
   const kb = Math.round(statSync(output).size / 1024);
-  console.log(`  + ${name}  (${kb} KB)`);
+  console.log(`  + ${join(rel, name).replace(/\\/g, "/")}  (${kb} KB)`);
   made++;
 }
 

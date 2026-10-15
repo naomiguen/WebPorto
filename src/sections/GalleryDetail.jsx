@@ -7,8 +7,9 @@ import Starfield, { GlowStar } from "../components/Starfield";
 import LangSwitch from "../components/LangSwitch";
 import useLang from "../i18n/useLang";
 
-// "/wepestaff10.JPG" -> "/thumbs/wepestaff10.jpg" (versi kecil dari public/thumbs)
-const thumbOf = (src) => src.replace(/^\/([^/]+)\.[^./]+$/, "/thumbs/$1.jpg");
+// "/organisasi/hmif-kadep/wepestaff10.JPG" -> "/thumbs/organisasi/hmif-kadep/wepestaff10.jpg"
+// (versi kecil di public/thumbs, struktur foldernya sama dengan foto aslinya)
+const thumbOf = (src) => src.replace(/^\/(.+)\.[^./]+$/, "/thumbs/$1.jpg");
 
 // Foto penuh: thumbnail tampil dulu, lalu diganti foto asli begitu selesai dimuat
 const FullPhoto = ({ photo, alt }) => {
@@ -85,7 +86,7 @@ const Lightbox = ({ photos, index, label, onClose, onChange }) => {
         <FullPhoto key={photo.src} photo={photo} alt={photo.caption || t.gallery.photoAlt(label, index + 1)} />
       </div>
 
-      <p className="mt-4 text-center text-sm font-semibold text-white/90">
+      <p className="mt-4 text-center text-sm font-semibold text-white">
         {photo.caption && <span className="mr-2 font-medium">{photo.caption} ·</span>}
         {index + 1} / {total}
       </p>
@@ -197,7 +198,7 @@ const GalleryDetail = () => {
 
   if (isEmpty) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#E53888] via-[#F37199] to-[#F7A8C4] flex items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-gradient-to-br from-[#DB3280] via-[#C72A72] to-[#AC1754] flex items-center justify-center p-6 text-center">
         <div className="bg-white rounded-3xl p-12 shadow-2xl max-w-sm">
           <ImageOff size={60} className="text-[#F7A8C4] mx-auto mb-6" />
           <h2 className="text-2xl font-black text-[#AC1754] mb-2">{t.gallery.emptyTitle}</h2>
@@ -219,7 +220,7 @@ const GalleryDetail = () => {
   const kegiatanEn = tr("gallery", slug, "kegiatan", null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#E53888] via-[#F37199] to-[#F7A8C4]">
+    <div className="min-h-screen bg-gradient-to-br from-[#DB3280] via-[#C72A72] to-[#AC1754]">
       {/* Bintang berkelip yang menempel di layar, tetap terlihat saat halaman di-scroll */}
       <Starfield fixed count={40} seed={7} edgeBias={0.45} mobileCount={20} />
 
@@ -249,7 +250,7 @@ const GalleryDetail = () => {
           <h1 className="mt-4 text-balance text-3xl font-black leading-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl">
             {title}
           </h1>
-          <p className="mt-3 text-sm font-medium text-white/85 sm:text-base">
+          <p className="mt-3 text-sm font-medium text-white sm:text-base">
             {isMulti ? t.gallery.statsMulti(gallery.kegiatan.length, totalPhotos) : t.gallery.statsSingle(totalPhotos)}
           </p>
           <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-white/60" />
@@ -275,12 +276,12 @@ const GalleryDetail = () => {
                     {nama}
                   </h2>
                   {isMulti && (
-                    <p className="text-xs font-medium text-white/80 sm:text-sm">
+                    <p className="text-xs font-medium text-white sm:text-sm">
                       {t.gallery.photoCount(item.photos.length)}
                     </p>
                   )}
                   {item.deskripsi && (
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
+                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white sm:text-base">
                       {item.deskripsi}
                     </p>
                   )}

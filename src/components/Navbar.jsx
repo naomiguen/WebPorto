@@ -20,7 +20,7 @@ const Navbar = () => {
   // Detect section yang sedang terlihat
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'pendidikan', 'pengalaman', 'projek', 'keahlian', 'footer'];
+      const sections = ['hero', 'pendidikan', 'pengalaman', 'projek', 'keahlian', 'tulisan', 'footer'];
       
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -58,6 +58,7 @@ const Navbar = () => {
     { label: t.nav.experience, id: 'pengalaman' },
     { label: t.nav.projects, id: 'projek' },
     { label: t.nav.skills, id: 'keahlian' },
+    { label: t.nav.writings, id: 'tulisan' },
     { label: t.nav.contact, id: 'footer' }
   ];
 

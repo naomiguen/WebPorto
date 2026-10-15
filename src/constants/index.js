@@ -1,5 +1,39 @@
+// ===== Folder foto =====
+// Semua foto ada di dalam folder public/, satu folder per pengalaman.
+// Menambah foto: taruh file-nya di folder yang sesuai, lalu tulis nama file-nya di daftar foto
+// (photosIn(...)) pada GALLERY_DATA di bawah, dan jalankan:  npm run thumbs
+const FOTO = {
+  profil         : "/profil",
+  pendidikan     : "/pendidikan/sman1-panti",
+  magangBmkg     : "/magang-asisten/bmkg",
+  beasiswaBi     : "/beasiswa/bank-indonesia",
+  pmk            : "/organisasi/pmk-persekutuan",
+  kadepHmif      : "/organisasi/hmif-kadep",
+  badanManajerial: "/organisasi/km-badan-manajerial",
+  pemandu        : "/organisasi/pemandu-lkmm",
+  staffHmif      : "/organisasi/hmif-staff",
+  staffMagang    : "/organisasi/hmif-staff-magang",
+  decathlon      : "/kepanitiaan/decathlon-pmk-2025",
+  infinite4      : "/kepanitiaan/infinite-vol4",
+  retreat        : "/kepanitiaan/retreat-pmk-2024",
+  hutKm          : "/kepanitiaan/hut-km-2024",
+  spinEtam       : "/kepanitiaan/spin-etam-2024",
+  infinite3      : "/kepanitiaan/infinite-vol3",
+  projek         : "/projek",
+};
+
+// photosIn(FOTO.pmk, "a.jpeg", "b.jpeg")  ->  [{ src: "/organisasi/pmk-persekutuan/a.jpeg" }, ...]
+// Foto yang diberi keterangan ditulis sebagai objek: { src: "c.jpeg", caption: "Keterangan" }
+const photosIn = (folder, ...files) =>
+  files.map((f) => (typeof f === "string" ? { src: `${folder}/${f}` } : { ...f, src: `${folder}/${f.src}` }));
+
+// seq("foto", 3)  ->  ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg"]   (untuk nama berurutan)
+const seq = (prefix, count, ext = "jpeg") =>
+  Array.from({ length: count }, (_, i) => `${prefix}${i + 1}.${ext}`);
+
 export const PROFILE = {
   name: "Naomi Ratna Marisaha Guen",
+  photo: `${FOTO.profil}/fotoku.jpg`,
   about: "Mahasiswa Informatika di Institut Teknologi Kalimantan yang berfokus pada pengembangan web dan teknologi berbasis AI. Aktif dalam organisasi dan kepanitiaan kampus, terbiasa bekerja terstruktur, dan terus mengembangkan kemampuan teknis melalui proyek nyata dan eksplorasi teknologi baru.",
 };
 
@@ -16,7 +50,7 @@ export const EDUCATION = [
     major: "Jurusan MIPA",
     institution: "SMAN 1 Panti",
     description: "Lulusan Jurusan MIPA serta peraih nilai tertinggi pada mata pelajaran Kimia dan Fisika.",
-    image: "/sma.jpeg"
+    image: `${FOTO.pendidikan}/sma.jpeg`
   }
 ];
 
@@ -86,42 +120,42 @@ export const ORGANIZATIONS = [
     role: "Kepala Departemen Persekutuan",
     organization: "Persekutuan Mahasiswa Kristen (PMK)",
     description: "Memimpin Departemen Persekutuan dengan merencanakan, mengoordinasikan, dan mengawasi program departemen sesuai tujuan dan nilai organisasi. Mengorganisir kegiatan persekutuan, program pengembangan rohani, dan inisiatif pembangunan komunitas antar anggota. Memantau dan mengevaluasi pelaksanaan program kerja secara berkala untuk memastikan efektivitas dan perbaikan berkelanjutan.",
-    image: "/organogram1.jpeg", // foto sampul kartu (kalau dikosongkan, tampil panel pengganti)
+    image: `${FOTO.pmk}/organogram1.jpeg`, // foto sampul kartu (kalau dikosongkan, tampil panel pengganti)
   },
   {
     year: "2025 - Sekarang",
     role: "Kepala Departemen Dalam Negeri HMIF ITK",
     organization: "HMIF ITK",
     description: "Bertanggung jawab atas pengelolaan internal organisasi, koordinasi antar divisi, serta memastikan keberlangsungan program kerja dan administrasi organisasi.",
-    image: "/kadep-hmif.jpeg"
+    image: `${FOTO.kadepHmif}/kadep-hmif.jpeg`
   },
   {
     year: "2025 - Sekarang",
     role: "Staff Badan Manajerial",
     organization: "KM ITK",
     description: "Bertanggung jawab mencari dan menyediakan pemateri dalam kegiatan PMO dan PDO setiap himpunan di ITK",
-    image: "/bmj.jpeg"
+    image: `${FOTO.badanManajerial}/bmj.jpeg`
   },
   {
     year: "2024 - Sekarang",
     role: "Pemandu LKMM ITK",
     organization: "PEMANDU LKMM ITK",
     description: "Merancang konsep pelatihan di ITK dan menjadi pemateri pada kegiatan LKMM Pra-TD dan LKMM TD sebagai upaya pengembangan kepemimpinan dan manajerial mahasiswa.",
-    image: "/pemandu.jpeg"
+    image: `${FOTO.pemandu}/pemandu.jpeg`
   },
   {
     year: "2024 - 2025",
     role: "Staff Departemen Dalam Negeri HMIF",
     organization: "HMIF ITK",
     description: "Bertanggung jawab atas perencanaan dan pelaksanaan beberapa program kerja, seperti Syukuran Wisuda dan Sekolah Sidang.",
-    image: "/staff_hmif.JPG"
+    image: `${FOTO.staffHmif}/staff_hmif.JPG`
   },
   {
     year: "April 2024 - September 2024",
     role: "Staff Magang Departemen Dalam Negeri HMIF",
     organization: "HMIF ITK",
     description: "Menjadi MC pada acara syukuran wisuda HMIF.",
-    image: "/staff_magang.jpeg"
+    image: `${FOTO.staffMagang}/staff_magang.jpeg`
   }
 ];
 
@@ -131,42 +165,42 @@ export const COMMITTEES = [
     role: "Staff Ahli Divisi Acara",
     event: "Decathlon PMK ITK",
     description: "Bertanggung jawab dalam merancang konsep kreatif dan menyusun rundown kegiatan secara detail, serta mengoordinasikan seluruh elemen acara untuk memastikan pelaksanaan berjalan tepat waktu dan sesuai dengan rencana yang telah ditetapkan",
-    image: "/Decathlon.JPG"
+    image: `${FOTO.decathlon}/Decathlon.JPG`
   },
   {
     year: "2025",
     role: "Staff Ahli Divisi Acara",
     event: "Infinite Vol.4",
     description: "Merancang konsep Expo Kerja Praktik Informatika dan pameran karya mata kuliah IoT, Game, serta Deep Learning sebagai media publikasi karya mahasiswa dan sarana promosi Program Studi Informatika.",
-    image: "/expo_infinite.jpg"
+    image: `${FOTO.infinite4}/expo_infinite.jpg`
   },
   {
     year: "2024",
     role: "Staf Divisi Acara",
     event: "Retreat PMK ITK 2024",
     description: "Bertanggung jawab atas perancangan konsep dan tema acara bagi mahasiswa baru se-Institut Teknologi Kalimantan, termasuk desain permainan indoor dan outdoor serta pengelolaan pembagian kelompok peserta secara terstruktur.",
-    image: "/retreat.jpeg"
+    image: `${FOTO.retreat}/retreat.jpeg`
   },
   {
     year: "2024",
     role: "Staf Divisi Dana Usaha",
     event: "HUT KM ITK 2024",
     description: "Bertanggung jawab atas penyusunan laporan penjualan serta pengembangan strategi penjualan untuk mencapai target yang telah ditetapkan.",
-    image: "/hut_km.jpeg"
+    image: `${FOTO.hutKm}/hut_km.jpeg`
   },
   {
     year: "2024",
     role: "Staf Divisi Acara",
     event: "SPIn ETAM ITK 2024",
     description: "Menjadi LO dalam kegiatan SPIn ETAM sebagai penghubung komunikasi dengan peserta, memastikan penyampaian informasi yang akurat, serta berkontribusi dalam perancangan gerakan flashmob dan penyusunan kode papermob untuk rangkaian acara penyambutan mahasiswa baru Institut Teknologi Kalimantan.",
-    image: "/Spin_etam.jpeg"
+    image: `${FOTO.spinEtam}/Spin_etam.jpeg`
   },
   {
     year: "2023",
     role: "Staf Divisi Acara",
     event: "INFINITE Vol.3",
     description: "Menyusun Term of Reference (TOR) InfoTech EXPO INFINITE Vol. 3 serta berperan dalam pemasangan dekorasi dan memastikan seluruh elemen acara tertata dengan rapi",
-    image: "/expo.jpeg"
+    image: `${FOTO.infinite3}/expo.jpeg`
   },
 ];
 
@@ -175,14 +209,14 @@ export const PROJECTS = [
     title: "Sistem Informasi Enterprise Architecture BMKG",
     tech: ["React.js", "Supabase", "TOGAF Framework", "ANN & AutoML"],
     description: "Dikerjakan saat magang di BMKG Stasiun Meteorologi Kelas I Sultan Aji Muhammad Sulaiman Sepinggan, Balikpapan. Membantu merancang model Enterprise Architecture (TOGAF) untuk menyelaraskan proses bisnis dengan sistem IT, membangun sistem web berbasis React.js dengan Supabase (PostgreSQL) sebagai backend, serta mengembangkan model klasifikasi cuaca berbasis ANN dan AutoML untuk meningkatkan akurasi prediksi.",
-    image: "/dokum_bmkg.jpeg",
+    image: `${FOTO.magangBmkg}/dokum_bmkg.jpeg`,
     isPrivate: true
   },
   {
     title: "ScanBar",
     tech: ["Vue.js", "Express", "MongoDB", "Supabase"],
     description: "ScanBar adalah aplikasi web pelacak nutrisi untuk produk makanan dan minuman. Pengguna dapat memindai barcode kemasan untuk melihat kandungan gizi (data OpenFoodFacts), mencatat asupan harian, dan mendapat analisis serta rekomendasi dari Google Gemini. Untuk makanan tanpa kemasan, tersedia analisis dari foto dan chatbot gizi berbasis AI. Dilengkapi kalkulator BMR/TDEE untuk target nutrisi harian, serta dashboard admin untuk mengelola produk dan pengguna.",
-    image: "/Scanbar.png",
+    image: `${FOTO.projek}/Scanbar.png`,
     demoLink: "https://scan-bar-y26r.vercel.app/",
     githubLink: "https://github.com/naomiguen/fe-scanbar",
     isPrivate: false
@@ -191,7 +225,7 @@ export const PROJECTS = [
     title: "Convertly",
     tech: ["React.js", "FastAPI", "Python", "Docker"],
     description: "Convertly adalah situs alat file gratis untuk mahasiswa dengan 19 alat dalam satu antarmuka, mulai dari kompres, gabung, dan kunci PDF, pas foto otomatis, hingga konversi Word/PowerPoint ke PDF dan OCR untuk scan. Dibangun dengan keamanan sebagai prioritas: validasi file berdasarkan isinya, rate limit per IP berbasis Redis, serta penghapusan file otomatis setelah 30 menit. Tersedia dalam tiga bahasa (Indonesia, English, Español) dengan mode gelap.",
-    image: "/convertly.png",
+    image: `${FOTO.projek}/convertly.png`,
     githubLinks: [
       { label: "Repo Frontend", labelEn: "Frontend Repo", url: "https://github.com/naomiguen/convertly-frontend" },
       { label: "Repo Backend", labelEn: "Backend Repo", url: "https://github.com/naomiguen/convertly-backend" },
@@ -228,39 +262,18 @@ export const SKILLS = {
 };
 
 export const GALLERY_DATA = {
-  // Slug = nama peran dalam huruf kecil dengan spasi jadi "-" (lihat toSlug di Experience.jsx)
+  // Slug = nama peran dalam huruf kecil dengan spasi jadi "-" (lihat toSlug di Experience.jsx).
+  // Cara menambah foto: taruh file di folder FOTO.<pengalaman>, lalu tambahkan nama file-nya di photosIn(...).
   "kepala-departemen-persekutuan": {
     title: "Kepala Departemen Persekutuan PMK",
     kegiatan: [
       {
         nama: "Organogram",
-        photos: [
-          { src: "/organogram1.jpeg" },
-          { src: "/organogram2.jpeg" },
-          { src: "/organogram3.jpeg" },
-          { src: "/organogram4.jpeg" },
-        ],
+        photos: photosIn(FOTO.pmk, ...seq("organogram", 4)),
       },
       {
         nama: "Photo Studio",
-        photos: [
-          { src: "/photostudio1.jpeg" },
-          { src: "/photostudio2.jpeg" },
-          { src: "/photostudio3.jpeg" },
-          { src: "/photostudio4.jpeg" },
-          { src: "/photostudio5.jpeg" },
-          { src: "/photostudio6.jpeg" },
-          { src: "/photostudio7.jpeg" },
-          { src: "/photostudio8.jpeg" },
-          { src: "/photostudio9.jpeg" },
-          { src: "/photostudio10.jpeg" },
-          { src: "/photostudio11.jpeg" },
-          { src: "/photostudio12.jpeg" },
-          { src: "/photostudio13.jpeg" },
-          { src: "/photostudio14.jpeg" },
-          { src: "/photostudio15.jpeg" },
-          { src: "/photostudio16.jpeg" },
-        ],
+        photos: photosIn(FOTO.pmk, ...seq("photostudio", 16)),
       },
     ],
   },
@@ -270,27 +283,15 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Ring One",
-        photos: [
-          { src: "/ringone1.jpeg" },
-          { src: "/ringone2.jpeg" },
-          { src: "/ringone3.jpeg" },
-          { src: "/ringone4.jpeg" },
-        ],
+        photos: photosIn(FOTO.beasiswaBi, ...seq("ringone", 4)),
       },
       {
         nama: "Divisi Pendidikan dan Kebudayaan",
-        photos: [
-          { src: "/divisipendikbud1.jpeg" },
-          { src: "/divisipendikbud2.jpeg" },
-        ],
+        photos: photosIn(FOTO.beasiswaBi, ...seq("divisipendikbud", 2)),
       },
       {
         nama: "GenBI Balikpapan",
-        photos: [
-          { src: "/genbi1.jpeg" },
-          { src: "/genbi2.jpeg" },
-          { src: "/genbi3.jpeg" },
-        ],
+        photos: photosIn(FOTO.beasiswaBi, ...seq("genbi", 3)),
       },
     ],
   },
@@ -300,8 +301,8 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Dokumentasi Kegiatan Magang",
-        // Tambahkan foto magang lain di sini: { src: "/nama-file.jpeg" }
-        photos: [{ src: "/dokum_bmkg.jpeg" }],
+        // Foto magang lain: tambahkan nama file-nya setelah "dokum_bmkg.jpeg"
+        photos: photosIn(FOTO.magangBmkg, "dokum_bmkg.jpeg"),
       },
     ],
   },
@@ -311,48 +312,20 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Foto Dagriww",
-        photos: [
-          { src: "/kadep-hmif.jpeg" },
-          { src: "/foto1.jpeg" },
-          { src: "/foto2.jpeg" },
-          { src: "/foto3.jpeg" }
-        ],
+        photos: photosIn(FOTO.kadepHmif, "kadep-hmif.jpeg", ...seq("foto", 3)),
       },
       {
         nama: "Welcome Party Dagri",
-        photos: [
-          { src: "/wepedagri1.jpeg" },
-          { src: "/wepedagri2.jpeg" },
-          { src: "/wepedagri3.jpeg" },
-          { src: "/wepedagri4.jpeg" }
-        ],
-     },
-     {
+        photos: photosIn(FOTO.kadepHmif, ...seq("wepedagri", 4)),
+      },
+      {
         nama: "Welcome Party Staff HMIF Kabinet Impact",
-        photos: [
-          { src: "/wepestaff1.jpeg" },
-          { src: "/wepestaff2.jpeg" },
-          { src: "/wepestaff3.jpeg" },
-          { src: "/wepestaff4.jpeg" },
-          { src: "/wepestaff5.jpeg" },
-          { src: "/wepestaff6.jpeg" },
-          { src: "/wepestaff7.jpeg" },
-          { src: "/wepestaff10.JPG" },
-        ],
-     },
-     {
+        photos: photosIn(FOTO.kadepHmif, ...seq("wepestaff", 7), "wepestaff10.JPG"),
+      },
+      {
         nama: "Welcome Party Maba Informatika 2025",
-        photos: [
-          { src: "/wepestaff1.jpeg" },
-          { src: "/wepestaff2.jpeg" },
-          { src: "/wepestaff3.jpeg" },
-          { src: "/wepestaff4.jpeg" },
-          { src: "/wepestaff5.jpeg" },
-          { src: "/wepestaff6.jpeg" },
-          { src: "/wepestaff7.jpeg" },
-          { src: "/wepestaff10.JPG" },
-        ],
-     },
+        photos: photosIn(FOTO.kadepHmif, ...seq("wepestaff", 7), "wepestaff10.JPG"),
+      },
     ],
   },
 
@@ -361,9 +334,7 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Kegiatan PMO & PDO",
-        photos: [
-          { src: "/bmj.jpeg" },
-        ],
+        photos: photosIn(FOTO.badanManajerial, "bmj.jpeg"),
       },
     ],
   },
@@ -373,9 +344,7 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Sesi Pelatihan LKMM",
-        photos: [
-          { src: "/pemandu.jpeg" },
-        ],
+        photos: photosIn(FOTO.pemandu, "pemandu.jpeg"),
       },
     ],
   },
@@ -385,9 +354,7 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Program Kerja Departemen",
-        photos: [
-          { src: "/staff_hmif.JPG" },
-        ],
+        photos: photosIn(FOTO.staffHmif, "staff_hmif.JPG"),
       },
     ],
   },
@@ -397,13 +364,46 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Syukuran Wisuda HMIF",
-        photos: [
-          { src: "/staff_magang.jpeg" },
-        ],
+        photos: photosIn(FOTO.staffMagang, "staff_magang.jpeg"),
       },
     ],
   },
 };
+
+// Tulisan pilihan dari Medium. Untuk mengganti atau menambah: edit daftar ini
+// (judul, url, tanggal "YYYY-MM-DD", menit baca, dan kutipan pembukanya).
+export const MEDIUM_URL = "https://medium.com/@guenn4";
+
+export const WRITINGS = [
+  {
+    title: "Bukankah Manusia Itu Dinamis?",
+    url: "https://medium.com/@guenn4/bukankah-manusia-itu-dinamis-dfd8ed3034ea",
+    date: "2026-08-24",
+    minutes: 3,
+    excerpt: "Ada orang-orang yang tanpa sadar kita masukkan ke dalam sebuah kotak. Kita mengenalnya sebagai orang yang kasar, cuek, menyebalkan, atau sulit diajak bicara. Lalu setiap kali…",
+  },
+  {
+    title: "Tentang Lelah yang Tidak Selalu Terlihat",
+    url: "https://medium.com/@guenn4/tentang-lelah-yang-tidak-selalu-terlihat-82ae8fd6d4b4",
+    date: "2026-08-10",
+    minutes: 2,
+    excerpt: "Tadi aku pergi ke Gacoan. Waktu masuk, aku melihat seseorang memakai kostum sedang mengamen di depan. Awalnya aku cuma lewat begitu saja. Aku sempat melihatnya, tapi tidak…",
+  },
+  {
+    title: "Ternyata Aku Tidak Harus Mengerjakan Semuanya Sendiri",
+    url: "https://medium.com/@guenn4/ternyata-aku-tidak-harus-mengerjakan-semuanya-sendiri-1619d278f3f3",
+    date: "2026-08-08",
+    minutes: 2,
+    excerpt: "Minggu ini rasanya berjalan begitu cepat. Tugas akhir belum selesai, revisi masih menumpuk, dan aku harus mempersiapkan diri untuk membawakan materi di kegiatan LKMM Pra-TD.…",
+  },
+  {
+    title: "Siapa yang Bilang Kamu Merepotkan?",
+    url: "https://medium.com/@guenn4/siapa-yang-bilang-kamu-merepotkan-adb10b55c546",
+    date: "2026-08-06",
+    minutes: 3,
+    excerpt: "Pernah enggak sih kamu mengurungkan niat untuk meminta tolong, bukan karena enggak ada yang bisa membantu, tapi karena takut dianggap merepotkan?",
+  },
+];
 
 // Apakah halaman dokumentasi dengan slug ini sudah punya minimal satu foto?
 export const hasPhotos = (slug) =>

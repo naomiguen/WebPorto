@@ -45,10 +45,10 @@ const Skills = () => {
       <Starfield count={18} seed={67} palette="soft" />
 
       <Reveal className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="mb-4 text-center text-2xl font-black uppercase tracking-widest text-[#AC1754] sm:text-3xl md:text-4xl">
+        <h2 className="mb-4 text-center text-2xl font-black uppercase tracking-widest text-[#8E1244] sm:text-3xl md:text-4xl">
           {t.section.skills}
         </h2>
-        <p className="mx-auto mb-10 max-w-xl text-center text-sm leading-relaxed text-[#AC1754]/80 sm:mb-14 sm:text-base">
+        <p className="mx-auto mb-10 max-w-xl text-center text-sm leading-relaxed text-[#6B0D33] sm:mb-14 sm:text-base">
           {t.skillsSubtitle}
         </p>
       </Reveal>

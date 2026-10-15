@@ -9,13 +9,13 @@ import useLang from "../i18n/useLang";
 const Education = () => {
   const { t, tr } = useLang();
   return (
-    <section id="pendidikan" className="relative overflow-hidden py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#F7A8C4] via-[#F37199] to-[#E53888]">
+    <section id="pendidikan" className="relative overflow-hidden py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#F7A8C4] via-[#F58BB0] to-[#EC5A92]">
       <Starfield count={22} seed={11} />
       <FloatingHeart className="right-[7%] top-12 text-white/40" />
       <FloatingSparkle className="left-[6%] bottom-14 text-white/50" delay={-2} />
 
       <div className="relative max-w-6xl mx-auto">
-        <Reveal as="h2" className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-12 sm:mb-16 md:mb-20 text-center uppercase tracking-widest drop-shadow-lg">
+        <Reveal as="h2" className="text-2xl sm:text-3xl md:text-4xl font-black text-[#7A0F3A] mb-12 sm:mb-16 md:mb-20 text-center uppercase tracking-widest">
           {t.section.education}
         </Reveal>
 
@@ -81,7 +81,7 @@ const Education = () => {
           <div className="mt-12 sm:mt-16 md:mt-20">
             <Reveal
               as="h3"
-              className="mb-6 sm:mb-8 text-center text-xl sm:text-2xl font-black uppercase tracking-widest text-white drop-shadow-lg"
+              className="mb-6 sm:mb-8 text-center text-xl sm:text-2xl font-black uppercase tracking-widest text-[#7A0F3A]"
             >
               {t.section.achievements}
             </Reveal>

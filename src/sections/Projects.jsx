@@ -13,7 +13,7 @@ const Projects = () => {
   // Fallback jika data kosong
   if (!PROJECTS || PROJECTS.length === 0) {
     return (
-      <section id="projek" className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#E53888] via-[#F37199] to-[#F7A8C4]">
+      <section id="projek" className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#D92F7A] via-[#EC5A92] to-[#F7A8C4]">
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-widest drop-shadow-lg">
@@ -27,7 +27,7 @@ const Projects = () => {
   }
 
   return (
-    <section id="projek" className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#E53888] via-[#F37199] to-[#F7A8C4] overflow-hidden">
+    <section id="projek" className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#D92F7A] via-[#EC5A92] to-[#F7A8C4] overflow-hidden">
       
       {/* Dekorasi Background Tambahan agar tidak flat */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">

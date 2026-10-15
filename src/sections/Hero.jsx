@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-6 md:px-12 pt-32 sm:pt-36 md:pt-40 lg:pt-20 pb-20 bg-gradient-to-br from-[#F7A8C4] via-[#F37199] to-[#E53888]"
+      className="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-6 md:px-12 pt-32 sm:pt-36 md:pt-40 lg:pt-20 pb-20 bg-gradient-to-br from-[#F7A8C4] via-[#F58BB0] to-[#EC5A92]"
     >
       {/* Gelembung latar yang bergerak pelan */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -44,7 +44,7 @@ const Hero = () => {
 
         {/* KIRI: TEKS PERKENALAN */}
         <div className="order-2 lg:order-1 text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#6B0D33] leading-[1.1]">
             <span className="block animate-fade-up motion-reduce:animate-none" style={delay(0.1)}>
               {t.hero.greeting}{" "}
               <span className="inline-block origin-[70%_70%] animate-wave motion-reduce:animate-none" aria-hidden="true">
@@ -52,14 +52,14 @@ const Hero = () => {
               </span>
             </span>
             <span
-              className="text-[#AC1754] text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-7xl block mt-2 animate-fade-up motion-reduce:animate-none"
+              className="text-[#6B0D33] text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-7xl block mt-2 animate-fade-up motion-reduce:animate-none"
               style={delay(0.3)}
             >
               {PROFILE.name}
             </span>
           </h1>
           <p
-            className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/95 leading-relaxed max-w-xl mx-auto lg:mx-0 drop-shadow px-2 sm:px-0 animate-fade-up motion-reduce:animate-none"
+            className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-[#4A0824] leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0 animate-fade-up motion-reduce:animate-none"
             style={delay(0.5)}
           >
             {tr("profile", "main", "about", PROFILE.about)}
@@ -83,7 +83,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-[#F37199] rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] rotate-2 -z-10 opacity-40"></div>
 
               <img
-                src="/fotoku.jpg"
+                src={PROFILE.photo}
                 alt="Naomi Ratna"
                 className="w-full h-full object-cover rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border-4 sm:border-6 md:border-8 border-white relative z-10"
               />

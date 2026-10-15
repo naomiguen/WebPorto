@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Mail, Github, Linkedin, Instagram, ArrowUp, Copy, Check } from "lucide-react";
 import useLang from "../i18n/useLang";
+import MediumIcon from "./MediumIcon";
+import { MEDIUM_URL } from "../constants";
 import Reveal from "./Reveal";
 import { FloatingHeart, FloatingSparkle } from "./Deco";
 import Starfield from "./Starfield";
@@ -111,6 +113,11 @@ const Footer = () => {
               icon: <Instagram className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />, 
               link: "https://instagram.com/its.naomiguen", 
               label: "Instagram" 
+            },
+            {
+              icon: <MediumIcon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+              link: MEDIUM_URL,
+              label: "Medium"
             }
           ].map((social, index) => (
             <Reveal key={index} variant="zoom" delay={index * 90}>

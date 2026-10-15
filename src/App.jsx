@@ -5,6 +5,7 @@ import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
+import Writings from "./sections/Writings";
 import Footer from "./components/Footer";
 import GalleryDetail from "./sections/GalleryDetail";
 import LanguageProvider from "./i18n/LanguageProvider";
@@ -18,6 +19,7 @@ function HomePage() {
       <Experience />
       <Projects />
       <Skills />
+      <Writings />
       <Footer />
     </main>
   );

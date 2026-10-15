@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "thumbs": "node scripts/make-thumbs.mjs",
+    "optimize": "node scripts/optimize-images.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
