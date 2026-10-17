@@ -383,18 +383,11 @@ export const WRITINGS = [
     excerpt: "Ada orang-orang yang tanpa sadar kita masukkan ke dalam sebuah kotak. Kita mengenalnya sebagai orang yang kasar, cuek, menyebalkan, atau sulit diajak bicara. Lalu setiap kali…",
   },
   {
-    title: "Tentang Lelah yang Tidak Selalu Terlihat",
-    url: "https://medium.com/@guenn4/tentang-lelah-yang-tidak-selalu-terlihat-82ae8fd6d4b4",
-    date: "2026-08-10",
-    minutes: 2,
-    excerpt: "Tadi aku pergi ke Gacoan. Waktu masuk, aku melihat seseorang memakai kostum sedang mengamen di depan. Awalnya aku cuma lewat begitu saja. Aku sempat melihatnya, tapi tidak…",
-  },
-  {
-    title: "Ternyata Aku Tidak Harus Mengerjakan Semuanya Sendiri",
-    url: "https://medium.com/@guenn4/ternyata-aku-tidak-harus-mengerjakan-semuanya-sendiri-1619d278f3f3",
-    date: "2026-08-08",
-    minutes: 2,
-    excerpt: "Minggu ini rasanya berjalan begitu cepat. Tugas akhir belum selesai, revisi masih menumpuk, dan aku harus mempersiapkan diri untuk membawakan materi di kegiatan LKMM Pra-TD.…",
+    title: "Apakah Kita Benar-Benar Mengenal Tuhan?",
+    url: "https://medium.com/@guenn4/apakah-kita-benar-benar-mengenal-tuhan-bcf472a937b0",
+    date: "2026-08-09",
+    minutes: 3,
+    excerpt: "Hari ini aku kembali diingatkan tentang satu hal yang terdengar sederhana: Apakah aku benar-benar mengenal Tuhan, atau selama ini aku hanya tahu tentang Tuhan?",
   },
   {
     title: "Siapa yang Bilang Kamu Merepotkan?",
@@ -402,6 +395,13 @@ export const WRITINGS = [
     date: "2026-08-06",
     minutes: 3,
     excerpt: "Pernah enggak sih kamu mengurungkan niat untuk meminta tolong, bukan karena enggak ada yang bisa membantu, tapi karena takut dianggap merepotkan?",
+  },
+  {
+    title: "“Kan Cuma Bercanda”, Katanya",
+    url: "https://medium.com/@guenn4/kan-cuma-bercanda-katanya-eb9612ba1ec2",
+    date: "2026-08-04",
+    minutes: 1,
+    excerpt: "Dulu aku punya seorang teman yang sangat dekat. Hampir ke mana-mana kami selalu berdua. Kalau ada yang mencari salah satu dari kami, biasanya orang akan bertanya, “Yang…",
   },
 ];
 
