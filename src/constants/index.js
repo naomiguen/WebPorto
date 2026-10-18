@@ -291,7 +291,7 @@ export const GALLERY_DATA = {
       },
       {
         nama: "GenBI Balikpapan",
-        photos: photosIn(FOTO.beasiswaBi, ...seq("genbi", 3)),
+        photos: photosIn(FOTO.beasiswaBi, ...seq("genbi", 4)),
       },
     ],
   },
@@ -301,8 +301,8 @@ export const GALLERY_DATA = {
     kegiatan: [
       {
         nama: "Dokumentasi Kegiatan Magang",
-        // Foto magang lain: tambahkan nama file-nya setelah "dokum_bmkg.jpeg"
-        photos: photosIn(FOTO.magangBmkg, "dokum_bmkg.jpeg"),
+        // bmkg1.jpeg ... bmkg11.jpeg. Foto baru: taruh di folder ini, lalu ubah angka di seq("bmkg", 11)
+        photos: photosIn(FOTO.magangBmkg, "dokum_bmkg.jpeg", ...seq("bmkg", 11)),
       },
     ],
   },
